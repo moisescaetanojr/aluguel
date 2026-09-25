@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aluguel Fácil — encontre imóveis para morar com bom preço, qualidade e localização.">
+  <title>Aluguel Fácil | Encontre seu próximo lar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">⌂</span>
+      <span>Aluguel<span>Fácil</span></span>
+    </div>
+    <button id="locationBtn" class="location-btn">📍 Usar minha localização</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">ALUGUEL RESIDENCIAL</p>
+        <h1>Encontre uma casa boa,<br><span>sem pagar mais do que precisa.</span></h1>
+        <p class="hero-text">Compare preço, qualidade, distância e características do imóvel em uma única busca.</p>
+
+        <form id="searchForm" class="search-box">
+          <div class="field field-main">
+            <label for="search">Onde você quer morar?</label>
+            <input id="search" type="search" placeholder="Cidade, bairro ou endereço">
+          </div>
+          <div class="field">
+            <label for="maxPrice">Aluguel máximo</label>
+            <input id="maxPrice" type="number" min="0" step="50" placeholder="R$ 2.500">
+          </div>
+          <div class="field">
+            <label for="minQuality">Qualidade mínima</label>
+            <select id="minQuality">
+              <option value="0">Qualquer</option>
+              <option value="60">Boa (60+)</option>
+              <option value="75">Muito boa (75+)</option>
+              <option value="85">Excelente (85+)</option>
+            </select>
+          </div>
+          <button class="search-btn" type="submit">Buscar</button>
+        </form>
+
+        <div id="locationStatus" class="location-status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="content">
+      <aside class="filters">
+        <div class="filter-head">
+          <h2>Filtros</h2>
+          <button id="clearFilters" class="link-btn">Limpar</button>
+        </div>
+
+        <label>Tipo de imóvel</label>
+        <div class="check-list">
+          <label><input type="checkbox" name="type" value="Casa"> Casa</label>
+          <label><input type="checkbox" name="type" value="Apartamento"> Apartamento</label>
+        </div>
+
+        <label for="rooms">Quartos mínimos</label>
+        <select id="rooms">
+          <option value="0">Qualquer</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+
+        <label for="maxDistance">Distância máxima</label>
+        <select id="maxDistance">
+          <option value="999">Qualquer distância</option>
+          <option value="5">Até 5 km</option>
+          <option value="10">Até 10 km</option>
+          <option value="20">Até 20 km</option>
+          <option value="40">Até 40 km</option>
+        </select>
+
+        <label for="sort">Ordenar por</label>
+        <select id="sort">
+          <option value="best">Melhores anúncios</option>
+          <option value="priceAsc">Menor preço</option>
+          <option value="quality">Maior qualidade</option>
+          <option value="distance">Mais próximos</option>
+        </select>
+
+        <div class="trust-box">
+          <strong>🔎 Índice AluguelFácil</strong>
+          <p>Comparamos preço, qualidade, localização e características para destacar o que oferece mais valor.</p>
+        </div>
+      </aside>
+
+      <section class="results">
+        <div class="results-top">
+          <div>
+            <h2>Imóveis encontrados</h2>
+            <p id="resultsCount">Carregando...</p>
+          </div>
+          <div id="userPosition" class="position-pill">Localização não definida</div>
+        </div>
+        <div id="listings" class="listings"></div>
+        <div id="emptyState" class="empty hidden">
+          <div>🏠</div>
+          <h3>Nenhum imóvel encontrado</h3>
+          <p>Tente aumentar o preço máximo, a distância ou reduzir os filtros.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Aluguel Fácil · MVP demonstrativo · Imóveis para moradia</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
